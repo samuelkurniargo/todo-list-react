@@ -26,7 +26,11 @@ function Todo({ todos, editTodo, completeTodo, deleteTodo }) {
       className={todo.isComplete ? "todo-row complete" : "todo-row"}
       key={index}
     >
-      <div key={todo.id} onClick={() => completeTodo(todo.id)}>
+      <div className="todo-list" key={todo.id} onClick={() => completeTodo(todo.id)}>
+        <div className="checklist">
+          <input type="checkbox" name="checklist-item" id="checklist-box" />
+          <span className="checkmark"></span>
+        </div>
         {todo.text}
       </div>
       <div className="icons">
